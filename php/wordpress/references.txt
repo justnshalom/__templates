@@ -1,0 +1,2 @@
+# Template hierarchy
+http://codex.wordpress.org/Template_Hierarchy
