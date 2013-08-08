@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Yiibu Style</title>
+
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0;">
+
+	<!-- all -->
+	<link rel="stylesheet" type="text/css" href="../../resources/styles/basic.css" media="screen, handheld" />
+
+	<!-- If handheld device supports media queries -->
+	<link rel="stylesheet" type="text/css" href="../../resources/styles/mobile.css" media="only screen and (min-width: 320px) and (max-width: 640px)" />
+
+	<!-- If desktop and desktop device supports media queries -->
+	<link rel="stylesheet" type="text/css" href="../../resources/styles/desktop.css" media="only screen and (min-width: 640px)" />
+	<script type="text/javascript" src="../../resources/scripts/default.js"></script>
+</head>
+<body>
+
+basic
+
+mobile
+
+desktop
+	@font-face
+
+
+requires javascript to 'update' on resize
+// http://yiibu.com/resources/scripts/default.js
+
+</body>
+</html>
+
+
+lightweight default (NO MEDIA QUERIES)
+- fully flexible
+- basic
+
+second stylesheet  (major breakpoint)
+- only styles to enhance layout
+
+(minor breakpoints) within each style sheet
+content or component-specific tweaks
+
+
+
+major
+basic.css
+<link enhanced-640.css	media="breakpoint">
+enhanced-720.css
+
+
+minor breakpoints within the above three i.e.
+basic: none
+enhanced-640: @media all and 	(min-width: 480px)  }
