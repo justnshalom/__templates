@@ -1,0 +1,14 @@
+# https://github.com/github/gitignore
+
+# Ide and OS Rubbish
+.idea/*
+*.swp
+.DS_Store
+
+# Globally allow .gitignore files
+!.gitignore
+
+# Misc
+*.sass-cache*
+.DS_Store
+.sass-cache
