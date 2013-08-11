@@ -1,0 +1,3 @@
+# Animations
+# https://github.com/jhardy/compass-ceaser-easing
+require 'ceaser-easing'
