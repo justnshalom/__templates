@@ -1,0 +1,57 @@
+/*
+|--------------------------------------------------------------------------
+| Index
+|--------------------------------------------------------------------------
+|
+| This is the core structural template for Theme.
+|
+*/
+
+// Scope
+// @param String
+$SCOPE: "";
+
+
+// body scope - body class handler
+// MUST BE A CLASS
+$body-scope: "";
+
+//
+$content: ".content--" + $SCOPE;
+$full: ".full--" + $SCOPE;
+$main: ".main--" + $SCOPE;
+$sidebar: ".sidebar--" + $SCOPE;
+
+
+//
+// Start the Class
+// ---------------------------------------
+
+$billboard: false;
+
+$bg-color:          $color-white;
+$sidebar-bg-color:  $color-grey-light;
+
+@if ($billboard == true) {
+	#{$body-scope} {
+		background-image: none;     // remove gradient background image
+
+		.site-header {
+			@extend %site-header-absolutely-positioned-header;
+		}
+	}
+}
+
+#{$content} {
+	@extend .content;
+
+	#{$full} {
+		@extend .full;
+	}
+	#{$main} {
+		@extend .main;
+	}
+	#{$sidebar} {
+		@extend .sidebar;
+	}
+}

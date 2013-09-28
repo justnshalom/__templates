@@ -1,0 +1,24 @@
+/*
+|--------------------------------------------------------------------------
+| class FastFact extends Box
+|--------------------------------------------------------------------------
+|
+| A Fast Fact element displays an image asset containing the fact and a
+| variation of structural and text elements
+|
+| @requires ~/base/components/_box.scss
+|
+| Example:
+
+|
+*/
+
+@mixin FastFact {
+	@include Box {
+		// ...
+	}
+
+	// ...
+}
+
+

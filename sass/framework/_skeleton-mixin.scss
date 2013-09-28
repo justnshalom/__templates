@@ -1,0 +1,73 @@
+/*
+|--------------------------------------------------------------------------
+| class ComponentA
+|--------------------------------------------------------------------------
+|
+| [long description]
+|
+| Example
+  <div class="{{ identifier }}">
+    <div class="component-a__element">
+        //...
+    </div>
+  </div>
+|
+*/
+
+// output HTML?
+$INCLUDE_COMPONENT-A_HTML: true;
+
+// globals
+$var: null;					// should be defined in config.scss
+
+
+@mixin ComponentA(
+	// parameters
+	$arg1: 'val',
+	$arg2: 'val'
+) {
+	// keep scope on the object
+	// get a handle to the module, sass doesn't provide 'this'
+	// the scope should not include '.' or '#' so we can properly
+	// leverage parent selector '&', a bug that will be resolved in
+	// sass 4.0
+	$SCOPE: "component-a";
+
+	// private, shared
+	// encapsulate placeholders and variables to keep the global
+	// clean
+	$_var: 'val';
+
+	%_example {}
+
+
+	// scope selectors
+	// use BEM syntax to communicate an element's relationship in
+	// scope
+	.#{$SCOPE}__element {
+		@extend %_example;
+	}
+
+
+	// support the Class being extended as submodule
+	@content;
+}
+
+
+
+// Init
+// OOCSS utilities. Use these in DOM or include mixins in SASS
+// partials
+@if ($INCLUDE_COMPONENT-A_HTML == true) {
+	// default type
+	.component-a {
+		@include ComponentA;
+	}
+
+	// sub-type
+	.component-a--submodule-type {
+		@include ComponentA {
+			content: 'these properties only exist in this';
+		}
+	}
+}

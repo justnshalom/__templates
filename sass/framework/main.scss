@@ -1,0 +1,61 @@
+/*
+|--------------------------------------------------------------------------
+| Main stylesheet file for theme
+|--------------------------------------------------------------------------
+|
+| SASS @import all stylesheets here. Export main.css as Theme CSS.
+|
+*/
+
+
+
+
+// Globals
+//
+@import 'config';
+
+
+// Base
+// SMACSS base.
+//
+@import 'base/*';					// semantic
+@import 'base/components/*';		// non-semantic; mixins, UI objects
+
+
+// Modules
+// UI custom to the theme, built by extending on base and components.
+//
+@import 'modules/*';
+
+
+// Templates
+// Handle the structure of view layouts.
+// Content agnostic - should not determine any page content.
+//
+@import 'templates/*';
+
+
+// Pages
+// Tightly coupled to views and communicate information about how
+// elements are incorporated to the page.
+// Stylesheets will consist mainly of layering predefined mixins.
+// They should **not** be used to create new UI's or modules.
+//
+@import 'pages/partials/*';
+@import 'pages/home/*';
+@import 'pages/category/*';
+@import 'pages/single/*';
+
+
+
+/*
+|--------------------------------------------------------------------------
+| end
+|--------------------------------------------------------------------------
+*/
+
+// $ENV==dev
+// excluded by default.
+// toggle $ENV in config.scss
+//
+@import 'debug';

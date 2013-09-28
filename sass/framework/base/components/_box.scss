@@ -1,0 +1,68 @@
+/*
+|--------------------------------------------------------------------------
+| class Box
+|--------------------------------------------------------------------------
+|
+| A simple box element with or without a footer
+|
+| Example:
+	<div class="{{ identifier }}">
+	    <div class="box__body">
+	        <h1>Title</h1>
+	        <img src="">
+	    </div>
+	    <div class="box__footer">
+	        <a href="#">See more</a>
+	    </div>
+	</div>
+|
+*/
+
+$INCLUDE_BOX_HTML: false;
+
+
+@mixin Box(
+
+) {
+
+	$SCOPE: "box";
+
+	@include clearfix;
+	position: relative;
+
+	h1 {
+		font-size: $h3-font-size;
+		margin: {
+			top: 0;
+			bottom: 0.2em;
+		}
+	}
+
+	p {
+		margin: {
+			bottom: 10px;
+			top: 0;
+		}
+		font-size: em(14);
+	}
+
+	.#{$SCOPE}__body {
+
+	}
+
+	.#{$SCOPE}__footer {
+		padding: 1em 0;
+	}
+
+	@content;
+}
+
+
+
+// Init
+//
+@if ($INCLUDE_BOX_HTML == true) {
+	.box {
+		@include Box;
+	}
+}
