@@ -1,0 +1,14 @@
+// Use a function to match a value to type
+//
+@function returnType($type) {
+	$value: '';
+	
+	@if (type == 'string-condition-a') {
+		$value: '0, 0, 0, 0';
+	} 
+	@else if (type == 'string-condition-b')  {
+		$value: '1, 1, 0, 0';
+	} 
+	
+	@return $value;
+}

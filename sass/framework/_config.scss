@@ -1,2 +1,15 @@
 $ENV: 'dev';
 //$ENV: 'production';
+
+$foo: 'bar' !default;
+$foo2: 'bar' !default;
+
+
+
+// greys
+//
+$color-grey: #262626;
+	$color-grey-hard: 		adjust-color($color-grey, $lightness: 20%);
+	$color-grey-medium: 	adjust-color($color-grey, $lightness: 40%);
+	$color-grey-soft: 		adjust-color($color-grey, $lightness: 60%);
+	$color-grey-super-soft: adjust-color($color-grey, $lightness: 75%); 

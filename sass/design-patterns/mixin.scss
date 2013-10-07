@@ -20,9 +20,6 @@ $INCLUDE_COMPONENT-A_HTML: true;
 // globals
 $var: null;					// should be defined in config.scss
 
-%example {
-	// ...
-}
 
 @mixin ComponentA(
 	// parameters
@@ -74,4 +71,3 @@ $var: null;					// should be defined in config.scss
 		}
 	}
 }
-
