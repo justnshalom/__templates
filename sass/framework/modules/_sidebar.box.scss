@@ -1,0 +1,43 @@
+/*
+|--------------------------------------------------------------------------
+| class SidebarBox extends BoxObject
+|--------------------------------------------------------------------------
+|
+| A box unit unique to sidebars in this project.
+|
+| Example:
+	<div class="{{ identifier }}">
+	    <div class="box__body">
+	        <h1>Title</h1>
+	        <img src="">
+	    </div>
+        <a href="#" class="box__footlink">See more</a>
+	</div>
+|
+*/
+
+$INCLUDE_SIDEBAR-BOX_HTML: true;
+
+
+%SidebarBox {
+	@include BoxObject;
+	margin-bottom: 1em;
+
+	.box__title {
+		font-size: $h3-font-size;
+		margin-top: 0;
+	}
+
+	.box__footlink {
+		@extend %box__footlink;
+	}
+}
+
+
+// Init
+//
+@if ($INCLUDE_SIDEBAR-BOX_HTML == true) {
+	.sidebar-box {
+		@extend %SidebarBox;
+	}
+}

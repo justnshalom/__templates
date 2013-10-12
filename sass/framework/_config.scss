@@ -12,4 +12,17 @@ $color-grey: #262626;
 	$color-grey-hard: 		adjust-color($color-grey, $lightness: 20%);
 	$color-grey-medium: 	adjust-color($color-grey, $lightness: 40%);
 	$color-grey-soft: 		adjust-color($color-grey, $lightness: 60%);
-	$color-grey-super-soft: adjust-color($color-grey, $lightness: 75%); 
+	$color-grey-super-soft: adjust-color($color-grey, $lightness: 75%);
+
+
+// breakpoints
+//
+$bp-small: 24em;				// major
+	$bp-small-2 : 29.75em;		// minor
+	$bp-small-3 : 39.8em;
+$bp-med: 46.8em;
+$bp-large: 50em;
+$bp-xl: 73em;
+
+
+// retina - use pixel density media queries

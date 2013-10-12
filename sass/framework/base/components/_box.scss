@@ -3,9 +3,10 @@
 | class Box
 |--------------------------------------------------------------------------
 |
-| A simple box element with or without a footer
+| A simple box object with or without a footer.
+| This component should not output code
 |
-| Example:
+| Example use:
 	<div class="{{ identifier }}">
 	    <div class="box__body">
 	        <h1>Title</h1>
@@ -18,51 +19,35 @@
 |
 */
 
-$INCLUDE_BOX_HTML: false;
-
-
 @mixin Box(
-
+	$var: 'value'
 ) {
-
+	// Object scope
 	$SCOPE: "box";
 
 	@include clearfix;
-	position: relative;
+	width: 100%;
 
-	h1 {
-		font-size: $h3-font-size;
-		margin: {
-			top: 0;
-			bottom: 0.2em;
-		}
-	}
 
-	p {
-		margin: {
-			bottom: 10px;
-			top: 0;
-		}
-		font-size: em(14);
-	}
-
+	// Public members
+	// all BoxObject's inherit tem
+	//
 	.#{$SCOPE}__body {
-
+		content: quote($var);
 	}
 
 	.#{$SCOPE}__footer {
 		padding: 1em 0;
 	}
 
-	@content;
-}
 
-
-
-// Init
-//
-@if ($INCLUDE_BOX_HTML == true) {
-	.box {
-		@include Box;
+	// Priveledged members
+	// can be on or off in BoxObjects, keep the scope here
+	//
+	%#{$SCOPE}__footlink {
+		color: red;
+		//@include media-object-footer-link($color-secondary);
 	}
+
+	@content;
 }
