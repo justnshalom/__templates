@@ -1,0 +1,33 @@
+/*
+|--------------------------------------------------------------------------
+| Lighten or Darken Color function
+|--------------------------------------------------------------------------
+|
+| Return a color which is lightened or darkened depending on the lightness
+| index of that color.
+|
+| @param $color {Color} - the color to change
+| @param $factor {Number} - a ratio to increment by
+|
+| Example:
+
+	.element {
+		border-color: $red;
+
+		&:hover {
+			border-color: lighten-or-darken($red, 7);
+		}
+	}
+
+|
+*/
+
+@function lighten-or-darken($color, $factor: $color-factor-index) {
+	$_lightness: lightness($color);
+
+	@if $_lightness > 70% {
+		@return darken($color, $factor);
+	} @else {
+		@return lighten($color, $factor);
+	}
+}

@@ -1,0 +1,41 @@
+@mixin responsive-visibility {
+	display: block !important;
+	tr & { display: table-row !important; }
+	th &,
+	td & { display: table-cell !important; }
+}
+
+@mixin responsive-invisibility {
+	display: none !important;
+	tr & { display: none !important; }
+	th &,
+	td & { display: none !important; }
+}
+
+%visisble-phone {
+	@include responsive-invisibility;
+	@include media($mobile) {
+		@include responsive-visibility;
+	}
+}
+
+%visisble-handheld {
+	@include responsive-invisibility;
+	@include media($handheld) {
+		@include responsive-visibility;
+	}
+}
+
+%hidden-phone {
+	@include responsive-visibility;
+	@include media($mobile) {
+		@include responsive-invisibility;
+	}
+}
+
+%hidden-handheld {
+	@include responsive-visibility;
+	@include media($handheld) {
+		@include responsive-invisibility;
+	}
+}
