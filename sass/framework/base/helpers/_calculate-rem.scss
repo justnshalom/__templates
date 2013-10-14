@@ -1,0 +1,43 @@
+/*
+|--------------------------------------------------------------------------
+| helper Calculate Rem
+|--------------------------------------------------------------------------
+|
+| Convert px to rem and provide fallback.  Rem is a value relative to root
+| em
+| - It works like pixels in that you don’t get compounding issue like you
+|   do with em and the computed value is always the same no matter where
+|   the value is set.
+| - In responsive design, you can set a different font-size on the <html>
+|   at each breakpoint and the text on your site will scale proportionally
+|   according to your root font-size.
+|
+| Use this for controlling font sizes
+|
+| Example use:
+	h1 {
+  		@include fontSize(32px);
+	}
+|
+| @source http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/
+|
+*/
+
+
+// Gets the rem value based on the px value that has been passed in
+// @param px - the value in pixel you want to convert
+//
+@function rem($px) {
+	$rem: $px / 16px;
+	@return #{$px}rem; 				//Default font size on html element is 100%, equivalent to 16px;
+
+}
+
+
+// call it
+// Include the fall back px declaration as well as the calculated rem value.
+//
+@mixin rem($px) {
+	font-size: $px; 				// Fallback in px, IE8 and lower
+	font-size: calculateRem($px);
+}
